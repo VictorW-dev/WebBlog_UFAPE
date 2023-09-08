@@ -1,6 +1,6 @@
-import { useAuthentication } from '../../hooks/useAuthentication';
 import styles from './Register.module.css';
 
+import { useAuthentication } from '../../hooks/useAuthentication';
 import { useState, useEffect } from 'react'
 
 const Register = () => {
@@ -41,7 +41,7 @@ const Register = () => {
             setError(authError);
         }
 
-    }, [authError])
+    }, [authError]);
 
     return (
         <div className={styles.register}>
@@ -52,15 +52,18 @@ const Register = () => {
                     <span>Nome:</span>
                     <input type="text" name="displayName" required placeholder="Nome do usuário"
                         value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
-
+                </label>
+                <label>
                     <span>E-mail:</span>
                     <input type="email" name="email" required placeholder="E-mail do usuário"
                         value={email} onChange={(e) => setEmail(e.target.value)} />
-
+                </label>
+                <label>
                     <span>Senha:</span>
                     <input type="password" name="password" required placeholder="Insira sua senha"
                         value={password} onChange={(e) => setPassword(e.target.value)} />
-
+                </label>
+                <label>
                     <span>Confirmação de senha:</span>
                     <input type="password" name="confirmPassword" required placeholder="Confirme sua senha"
                         value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />

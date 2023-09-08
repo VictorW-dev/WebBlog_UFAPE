@@ -23,22 +23,22 @@ const CreatePost = () => {
             <p>Escreva sobre o que quiser e compartilhe o seu conhecimento.</p>
             <form onSubmit={handleSubmit}>
                 <label>
-                <span>Título:</span>
+                    <span>Título:</span>
                     <input type="text" name="title" required placeholder="Pense em um bom título..."
                         value={title} onChange={(e) => setTitle(e.target.value)} />
                 </label>
                 <label>
-                <span>URL da imagem:</span>
+                    <span>URL da imagem:</span>
                     <input type="text" name="image" required placeholder="Insira uma imagem que representa o seu post..."
                         value={image} onChange={(e) => setImage(e.target.value)} />
                 </label>
                 <label>
-                <span>Conteúdo:</span>
+                    <span>Conteúdo:</span>
                     <textarea name="body" required placeholder="Insira o conteúdo do post..."
                         value={body} onChange={(e) => setBody(e.target.value)}></textarea>
                 </label>
                 <label>
-                <span>Tags:</span>
+                    <span>Tags:</span>
                     <input type="text" name="tags" required placeholder="Insira as tags separadas por vírgula..."
                         value={tags} onChange={(e) => setTags(e.target.value)} />
                 </label>

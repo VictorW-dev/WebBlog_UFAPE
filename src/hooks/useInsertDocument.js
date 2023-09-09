@@ -25,20 +25,20 @@ const insertReducer = (state, action) => {
 
 export const useInsertDocument = (docCollection) => {
 
-    checkCancelBeforeDispatch({ type: "LOADING", });
-
     const [response, dispatch] = useReducer(insertReducer, initialState);
 
     // deal with memory leak
     const [cancelled, setCancelled] = useState(false);
 
-    const checkCancelBeforeDispatch = () => {
+    const checkCancelBeforeDispatch = (action) => {
         if (!cancelled) {
             dispatch(action);
         }
-    }
+    };
 
     const insertDocument = async (document) => {
+
+        checkCancelBeforeDispatch({ type: "LOADING", });
 
         try {
 

@@ -22,7 +22,7 @@ const EditPost = () => {
         if (post) {
             setTitle(post.title)
             setImage(post.image)
-            setBody(post.bory)
+            setBody(post.body)
 
             const textTags = post.tagsArray.join(", ")
             setTags(textTags)
@@ -57,15 +57,17 @@ const EditPost = () => {
             creatBy: user.displayName,
         })
 
-        if (formError) return
+        if (formError) return;
+
         const data = {
             title,
             image,
-            bory: body,
+            body: body,
             tagsArray,
             uid: user.uid,
             creatBy: user.displayName
         }
+        
         updateDocument(id, data)
         //Redirect to homepage
         navigate("/dashboard")
